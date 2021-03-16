@@ -1,0 +1,51 @@
+{
+  "name": "abc-git-flow",
+  "version": "0.3.0",
+  "description": "Gitflow for ABC Inc.",
+  "main": "./lib/index.js",
+  "bin": "./bin/git-abc",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build",
+    "build": "tsc -p .",
+    "pkg": "yarn build && cd bin && pkg -t macos git-abc",
+    "local": "yarn pkg && cp ./bin/git-abc-macos /usr/local/bin/git-abc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lecion/abc-git-flow.git"
+  },
+  "keywords": [
+    "abc",
+    "git-flow"
+  ],
+  "author": "Bubble",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.1.1",
+    "figlet": "^1.3.0",
+    "got": "^11.6.1",
+    "inquirer": "^7.1.0",
+    "node-progress": "^0.1.0",
+    "nodegit": "^0.26.5",
+    "semver": "^7.3.2"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.2.0",
+    "@types/fs-extra": "^8.1.0",
+    "@types/inquirer": "^6.5.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "@types/nodegit": "^0.26.1",
+    "@types/progress": "^2.0.3",
+    "@types/semver": "^7.3.3",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typedoc": "^0.16.11",
+    "typescript": "^3.8.3"
+  }
+}
